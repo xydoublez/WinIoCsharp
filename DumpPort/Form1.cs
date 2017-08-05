@@ -14,7 +14,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
-
+using System.Threading;
 
 namespace DumpPort
 {
@@ -50,6 +50,7 @@ namespace DumpPort
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            winio.Initialize(); // 注册
             // Check if this is a 32 bit or 64 bit system
             if (IntPtr.Size == 4)
             {
@@ -149,6 +150,64 @@ namespace DumpPort
                     MessageBox.Show("Error returned from SetPortVal", "DumpPort", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+        WinIOLab winio = new WinIOLab();
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            testQQ();
+
+
+            //winio.Shutdown(); // 用完后注销
+        }
+        private void testTeamview()
+        {
+            //textBox1.Focus();
+            var teamviewer = win32.FindWindow(null, "TeamViewer");
+            win32.ShowWindow(teamviewer, win32.ShowWindowCommands.ShowDefault);
+            win32.SetForegroundWindow(teamviewer);
+            Thread.Sleep(500);
+            IntPtr hNext = IntPtr.Zero;
+            //第一个对话框
+            var diag1 = win32.FindWindowEx(teamviewer, hNext, "#32770", "");
+            var ComboBox = win32.FindWindowEx(diag1, hNext, "ComboBox", "");
+            var editId = win32.FindWindowEx(ComboBox, hNext, "Edit", "");
+            var btnLink = win32.FindWindowEx(diag1, hNext, "Button", "连接到伙伴");
+            win32.SetFocus(editId);
+            Send(Keys.D1);
+            Send(Keys.D2);
+            Send(Keys.D3);
+            Send(Keys.D4);
+        }
+        private void testQQ()
+        {
+            //textBox1.Focus();
+           
+            IntPtr hNext = IntPtr.Zero;
+
+            //win32.SetFocus(new IntPtr(0x00020BEA));
+            win32.SetForegroundWindow(new IntPtr(0x001505AA));
+            SendKeys.Send("1234");
+            //Send(Keys.D1);
+            //Send(Keys.D2);
+            //Send(Keys.D3);
+            //Send(Keys.D4);
+            //Send(Keys.Tab);
+            //Send(Keys.D1);
+            //Send(Keys.D2);
+            //Send(Keys.D3);
+            //Send(Keys.D4);
+
+        }
+        private void Send(Keys key)
+        {
+            winio.KeyDown(key);
+            winio.KeyUp(key);
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            winio.Shutdown();
         }
     }
 }
