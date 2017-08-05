@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinIoCsharp", "WinIoCsharp\WinIoCsharp.csproj", "{A987EC96-EF6F-4282-B8B0-57F12D2C7FA2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DumpPhys", "DumpPhys\DumpPhys.csproj", "{6D901DA9-2D98-4697-829B-0D6072CE6682}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DumpPort", "DumpPort\DumpPort.csproj", "{6AD3534C-588E-4B82-A2B8-96B27ECFA9BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{A987EC96-EF6F-4282-B8B0-57F12D2C7FA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A987EC96-EF6F-4282-B8B0-57F12D2C7FA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A987EC96-EF6F-4282-B8B0-57F12D2C7FA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D901DA9-2D98-4697-829B-0D6072CE6682}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D901DA9-2D98-4697-829B-0D6072CE6682}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D901DA9-2D98-4697-829B-0D6072CE6682}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D901DA9-2D98-4697-829B-0D6072CE6682}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AD3534C-588E-4B82-A2B8-96B27ECFA9BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AD3534C-588E-4B82-A2B8-96B27ECFA9BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AD3534C-588E-4B82-A2B8-96B27ECFA9BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AD3534C-588E-4B82-A2B8-96B27ECFA9BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

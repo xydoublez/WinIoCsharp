@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A987EC96-EF6F-4282-B8B0-57F12D2C7FA2}</ProjectGuid>
+    <ProjectGuid>{6D901DA9-2D98-4697-829B-0D6072CE6682}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WinIoCsharp</RootNamespace>
-    <AssemblyName>WinIoCsharp</AssemblyName>
+    <RootNamespace>DumpPhys</RootNamespace>
+    <AssemblyName>DumpPhys</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,6 +48,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -65,33 +69,20 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="WinIo\Binaries\WinIo32.sys" />
-    <None Include="WinIo\Binaries\WinIo64.sys" />
-    <None Include="WinIo\Help\WinIo.chm" />
-    <None Include="WinIo\Source\Dll\WinIo.aps" />
-    <None Include="WinIo\Source\Dll\WinIo.suo" />
-    <None Include="WinIo\Source\Dll\WinIo.vcproj" />
-    <None Include="WinIo\Source\Drv\MAKEFILE" />
-    <None Include="WinIo\Source\Drv\SOURCES" />
+    <None Include="WinIo32.sys">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="WinIo64.sys">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="WinIo\Binaries\DumpPhys.exe" />
-    <Content Include="WinIo\Binaries\DumpPort.exe" />
-    <Content Include="WinIo\Binaries\WinIo32.dll" />
-    <Content Include="WinIo\Binaries\WinIo64.dll" />
-    <Content Include="WinIo\Source\Dll\InstDrv.cpp" />
-    <Content Include="WinIo\Source\Dll\Phys32.cpp" />
-    <Content Include="WinIo\Source\Dll\Phys32.h" />
-    <Content Include="WinIo\Source\Dll\Port32.cpp" />
-    <Content Include="WinIo\Source\Dll\Port32.h" />
-    <Content Include="WinIo\Source\Dll\resource.h" />
-    <Content Include="WinIo\Source\Dll\WinIo.cpp" />
-    <Content Include="WinIo\Source\Dll\WinIo.def" />
-    <Content Include="WinIo\Source\Dll\winio.h" />
-    <Content Include="WinIo\Source\Dll\WinIo.rc" />
-    <Content Include="WinIo\Source\Dll\WinIo.sln" />
-    <Content Include="WinIo\Source\Drv\WinIo.c" />
-    <Content Include="WinIo\Source\Drv\winio_nt.h" />
+    <Content Include="WinIo32.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WinIo64.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
